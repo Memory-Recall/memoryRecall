@@ -12,6 +12,7 @@ prerequisites (packages)
 6. tensorflow
 
 Process:
+
 Step 1: Load CSV
 run fileUtils.py
 
@@ -22,6 +23,7 @@ Step 3: Predict data
 run predict.py
 
 NOTE:
+
     fileUtils.py and train.py has to be executed only one time.
     To predict sentence, just use predict.py
 
