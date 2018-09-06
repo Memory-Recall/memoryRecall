@@ -63,3 +63,14 @@ typings/
 *.idea/
 
 backEnd/package-lock.json
+
+python/venv
+python/tflearn_logs
+python/categories.txt
+python/checkpoint
+python/data.json
+python/model.tflearn.data-00000-of-00001
+python/model.tflearn.index
+python/model.tflearn.meta
+python/training_data.npy
+python/words.txt
