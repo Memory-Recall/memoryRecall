@@ -22,7 +22,7 @@ def read_mongo(db, collection, query={}, host='localhost', port=27017, username=
 
     return df
 
-df = read_mongo(""" database paramter here !!! """)
+df = read_mongo(""" database paramter here !! """)
 print(df.head())
 
 labels, texts = [],[]
