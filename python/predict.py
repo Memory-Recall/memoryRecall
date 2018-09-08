@@ -1,10 +1,10 @@
 import nltk
 from nltk.stem.lancaster import LancasterStemmer
-import numpy as np
-import tflearn
+import numpy as np # initialize numpy arrays from nested Python lists
+import tflearn #deep learning library
 import tensorflow as tf
 import json
-import pickle
+import pickle # way to convert a python object (list, dict, etc.) into a character stream.
 
 sent = input("write a sentence")
 
