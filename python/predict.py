@@ -63,11 +63,5 @@ def get_tf_record(sentence):
 
 
 # PREDICT THE SENTENCE
-sent_4 = "i am taking better of myself to stay healthy and  strong the rest of my life."
-sent_1 = "My daughter is getting married next spring.  I know she'll make a beautiful bride."
-sent_3 = "I am trying to increase my earnings, as money has been tight. If I don’t have enough for every day expenses, I will be in trouble."
-print(categories[np.argmax(model.predict([get_tf_record(sent_4)]))])
-print(categories[np.argmax(model.predict([get_tf_record(sent_1)]))])
-print(categories[np.argmax(model.predict([get_tf_record(sent_3)]))])
 print(categories[np.argmax(model.predict([get_tf_record(sent)]))])
 

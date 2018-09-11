@@ -52,12 +52,12 @@ for lab in unique_labels:
 
 
 for d in range(len(labels)):
-    print(labels[d])
-    print(texts[d])
+    # print(labels[d])
+    # print(texts[d])
     data["%s"%labels[d]].append(texts[d])
 
 json_data = json.dumps(data)
-print ('JSON: ', json_data)
+# print ('JSON: ', json_data)
 
 with open('data.json', 'w') as outfile:
     json.dump(data, outfile)
