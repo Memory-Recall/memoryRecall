@@ -2,7 +2,7 @@
 
 Python - machine learning
 
-**python version 3 required**
+**python version 3.6 required**
 
 prerequisites (packages)
 1. pandas
