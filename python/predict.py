@@ -5,25 +5,29 @@ import tflearn #deep learning library
 import tensorflow as tf
 import json
 import pickle # way to convert a python object (list, dict, etc.) into a character stream.
+import sys
+import os
 
-sent = input("write a sentence")
+dir_path = os.path.dirname(os.path.realpath(__file__)) + "/"
+
+sent = sys.stdin.readlines()
 
 words = []
 
 # read the json file and load the training data
-with open('data.json') as json_data:
+with open(dir_path+'data.json') as json_data:
     data = json.load(json_data)
 
 # get a list of all categories to train for
-with open("categories.txt", "rb") as fp:   # Unpickling
+with open(dir_path+"categories.txt", "rb") as fp:   # Unpickling
     categories = pickle.load(fp)
 
 
-with open("words.txt", "rb") as fp:   # Unpickling
+with open(dir_path+"words.txt", "rb") as fp:   # Unpickling
    words = pickle.load(fp)
 
 
-training = np.load("training_data.npy")
+training = np.load(dir_path+"training_data.npy")
 
 stemmer = LancasterStemmer()
 
@@ -43,7 +47,7 @@ net = tflearn.regression(net)
 
 # Define model and setup tensorboard
 model = tflearn.DNN(net, tensorboard_dir='tflearn_logs')
-model.load('model.tflearn')
+model.load(dir_path+'model.tflearn')
 
 
 def get_tf_record(sentence):
@@ -63,5 +67,5 @@ def get_tf_record(sentence):
 
 
 # PREDICT THE SENTENCE
-print(categories[np.argmax(model.predict([get_tf_record(sent)]))])
+print(categories[np.argmax(model.predict([get_tf_record(sent[0])]))])
 
